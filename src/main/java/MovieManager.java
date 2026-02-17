@@ -1,6 +1,5 @@
 public class MovieManager {
     private String[] movies = new String[0]; //Массив фильмов
-    private int movieCount = 0; // Текущее количество фильмов в массиве
     private int limit; //Лимит для вывода фильмов в методе findLast()
 
     // Геттер для limit (для проверки в тестах)
@@ -25,15 +24,14 @@ public class MovieManager {
             newMovies[i] = movies[i]; //Можно заменить на arraycopy()
         }
         movies = newMovies;
-        movies[movieCount] = movie;
-        movieCount++;
+        movies[movies.length - 1] = movie;
     }
 
     //Возвращает все фильмы в порядке их добавления
     public String[] findAll() {
-        String[] result = new String[movieCount];
+        String[] result = new String[movies.length];
 
-        for (int i = 0; i < movieCount; i++) {
+        for (int i = 0; i < movies.length; i++) {
             result[i] = movies[i]; //Можно заменить на arraycopy()
         }
 
@@ -47,15 +45,15 @@ public class MovieManager {
      */
     public String[] findLast() {
         int resultSize = 0;
-        if (limit > movieCount) { //Можно заменить на Math.min()
-            resultSize = movieCount;
+        if (limit > movies.length) { //Можно заменить на Math.min()
+            resultSize = movies.length;
         } else {
             resultSize = limit;
         }
         String[] result = new String[resultSize];
 
         for (int i = 0; i < resultSize; i++) {
-            result[i] = movies[movieCount - 1 - i];
+            result[i] = movies[movies.length - 1 - i];
         }
 
         return result;
