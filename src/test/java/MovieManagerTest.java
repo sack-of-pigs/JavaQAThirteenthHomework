@@ -7,14 +7,12 @@ class MovieManagerTest {
     void testDefaultConstructor() { //Тест конструктора без параметров
         MovieManager manager = new MovieManager();
         assertEquals(5, manager.getLimit());
-        assertEquals(0, manager.getMovieCount());
     }
 
     @Test
     void testParameterizedConstructor() { //Тест конструктора с параметрами
         MovieManager manager = new MovieManager(10);
         assertEquals(10, manager.getLimit());
-        assertEquals(0, manager.getMovieCount());
     }
 
     @Test

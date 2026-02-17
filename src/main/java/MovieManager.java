@@ -8,11 +8,6 @@ public class MovieManager {
         return limit;
     }
 
-    // Геттер для movieCount (для проверки в тестах)
-    public int getMovieCount() {
-        return movieCount;
-    }
-
     // Первый конструктор: без аргументов, ограничение по умолчанию — 5
     public MovieManager() {
         this.limit = 5;
