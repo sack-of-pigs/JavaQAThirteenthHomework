@@ -1,6 +1,6 @@
 public class MovieManager {
-    private String[] movies; //Массив фильмов
-    private int movieCount; // Текущее количество фильмов в массиве
+    private String[] movies = new String[0]; //Массив фильмов
+    private int movieCount = 0; // Текущее количество фильмов в массиве
     private int limit; //Лимит для вывода фильмов в методе findLast()
 
     // Геттер для limit (для проверки в тестах)
@@ -15,15 +15,11 @@ public class MovieManager {
 
     // Первый конструктор: без аргументов, ограничение по умолчанию — 5
     public MovieManager() {
-        this.movies = new String[0];
-        this.movieCount = 0;
         this.limit = 5;
     }
 
     // Второй конструктор: с указанием ограничения для метода findLast()
     public MovieManager(int limit) {
-        this.movies = new String[0];
-        this.movieCount = 0;
         this.limit = limit;
     }
 
